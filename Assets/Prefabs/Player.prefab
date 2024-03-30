@@ -599,6 +599,10 @@ GameObject:
   - component: {fileID: 7240338030860486271}
   - component: {fileID: 540878255423294821}
   - component: {fileID: 3774941387426862776}
+  - component: {fileID: -4265066325374951704}
+  - component: {fileID: 977186352637674000}
+  - component: {fileID: 4736635598366588149}
+  - component: {fileID: -514244073381818649}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -675,3 +679,118 @@ MonoBehaviour:
   paddingRight: 1.1
   paddingTop: 12
   paddingBottom: 1
+--- !u!50 &-4265066325374951704
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240338030860486268}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &977186352637674000
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240338030860486268}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7398491, y: 0.42240357}
+      - {x: 0.9237706, y: 0.97261715}
+      - {x: 0.83960897, y: 1.0560083}
+      - {x: 0.71683127, y: 0.7875118}
+      - {x: 0.4644612, y: 0.7862642}
+      - {x: 0.3929937, y: 0.58792925}
+      - {x: 0.32610473, y: 0.3808167}
+      - {x: 0.10036239, y: 0.38649726}
+      - {x: -0.016714454, y: 0.40592003}
+      - {x: -0.40141526, y: 0.3859408}
+      - {x: -0.45006946, y: 0.8023133}
+      - {x: -0.6732453, y: 0.7787907}
+      - {x: -0.8218268, y: 1.03598}
+      - {x: -0.9300179, y: 0.9822538}
+      - {x: -0.76152253, y: 0.46399355}
+      - {x: -0.8412893, y: 0.27626252}
+      - {x: -0.61507404, y: 0.10560012}
+      - {x: -0.6709271, y: -0.0027985573}
+      - {x: -0.676166, y: -0.20030236}
+      - {x: -1.1814659, y: -0.6433654}
+      - {x: -1.1470928, y: -0.97212934}
+      - {x: -0.94391286, y: -1.0235264}
+      - {x: -0.6671456, y: -0.6766794}
+      - {x: -0.71685344, y: -0.52229047}
+      - {x: -0.6475174, y: -0.39547825}
+      - {x: -0.54142594, y: -0.4961307}
+      - {x: -0.44993016, y: -0.456365}
+      - {x: -0.45133725, y: -0.69776154}
+      - {x: -0.33047542, y: -0.69955206}
+      - {x: -0.3684722, y: -0.44185042}
+      - {x: -0.23647353, y: -0.35151386}
+      - {x: 0.3697973, y: -0.38674664}
+      - {x: 0.35208595, y: -0.7096801}
+      - {x: 0.44189614, y: -0.7121315}
+      - {x: 0.5519864, y: -0.52162266}
+      - {x: 0.6899487, y: -0.43897486}
+      - {x: 0.61414456, y: -0.6849723}
+      - {x: 0.9287484, y: -1.0309677}
+      - {x: 1.1327934, y: -0.994961}
+      - {x: 1.186209, y: -0.6403935}
+      - {x: 0.75330395, y: -0.2702961}
+      - {x: 0.62831324, y: 0.09100056}
+      - {x: 0.81961334, y: 0.2705459}
+--- !u!114 &4736635598366588149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240338030860486268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67ce52d8d55dd240a2407373cf93fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+--- !u!114 &-514244073381818649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240338030860486268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61deaf34cb575e449d02c162a9ec437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
