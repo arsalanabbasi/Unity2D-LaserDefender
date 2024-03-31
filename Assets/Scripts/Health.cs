@@ -5,10 +5,13 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 50;
+    [SerializeField] bool applyCameraShake;
     SpecialEffects specialEffects;
+    CameraShake cameraShake;
 
     void Awake(){
         specialEffects = GetComponent<SpecialEffects>();
+        cameraShake = FindObjectOfType<CameraShake>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -17,6 +20,9 @@ public class Health : MonoBehaviour
         if (damageDealer != null)
         {
             TakeDamage(damageDealer.GetDamage());
+            if(applyCameraShake){
+                cameraShake.PlayCameraShake();
+                }
             specialEffects.PlayHitEffect();
             damageDealer.Hit();
         }

@@ -1014,6 +1014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  applyCameraShake: 1
 --- !u!114 &633838802178550364
 MonoBehaviour:
   m_ObjectHideFlags: 0
