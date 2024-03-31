@@ -5,6 +5,11 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 50;
+    SpecialEffects specialEffects;
+
+    void Awake(){
+        specialEffects = GetComponent<SpecialEffects>();
+    }
 
     void OnTriggerEnter2D(Collider2D other) {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
@@ -12,6 +17,7 @@ public class Health : MonoBehaviour
         if (damageDealer != null)
         {
             TakeDamage(damageDealer.GetDamage());
+            specialEffects.PlayHitEffect();
             damageDealer.Hit();
         }
     }
