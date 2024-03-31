@@ -278,12 +278,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1574165591290462491, guid: e63082eadabd5054a86cd55154bd6bc3, type: 3}
-  projectilePosition1: {fileID: 7057315992669975229}
-  projectilePosition2: {fileID: 0}
+  projectilePositions:
+  - {fileID: 7057315992669975229}
   projectileSpeed: 15
-  projectileLifetime: 4
-  firingRate: 1.5
+  projectileLifetime: 3
+  baseFiringRate: 0.5
+  isAI: 1
   minFiringRate: 0.7
   firingRateVariance: 0.4
-  useAI: 1
   isFiring: 0

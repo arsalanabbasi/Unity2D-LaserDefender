@@ -6,8 +6,7 @@ public class Shooter : MonoBehaviour
 {
     [Header("Laser Object & Positioning")]
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] Transform projectilePosition1;
-    [SerializeField] Transform projectilePosition2;
+    [SerializeField] List<Transform> projectilePositions;
 
     [Header("Laser Attributes")]
     [SerializeField] float projectileSpeed = 15f;
@@ -15,7 +14,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] float baseFiringRate = 0.5f;
     
     [Header("AI")]
-    [SerializeField] bool useAI;
+    [SerializeField] bool isAI;
     [SerializeField] float minFiringRate = 0.7f;
     [SerializeField] float firingRateVariance = 0.4f;
     Coroutine firingCoroutine;
@@ -23,7 +22,7 @@ public class Shooter : MonoBehaviour
     
     void Start()
     {
-        if (useAI){
+        if (isAI){
             isFiring = true;
             }
     }
@@ -48,31 +47,22 @@ public class Shooter : MonoBehaviour
 
     IEnumerator FiringContinuously(){
         while(true){
-            GameObject instance1 = Instantiate(projectilePrefab,
-                                            projectilePosition1.position, Quaternion.identity);
             
+            foreach(Transform child in projectilePositions){
+                GameObject instance = Instantiate(projectilePrefab,
+                                            child.position, Quaternion.identity);
+                
+                Rigidbody2D myRigidBody = instance.GetComponent<Rigidbody2D>();
             
-            Rigidbody2D myRigidBody1 = instance1.GetComponent<Rigidbody2D>();
-            
-            if (myRigidBody1 != null){
-                myRigidBody1.velocity = projectilePosition1.up * projectileSpeed;
+            if (myRigidBody != null){
+                myRigidBody.velocity = child.up * projectileSpeed;
                 }
 
-            Destroy(instance1, projectileLifetime);
+            Destroy(instance, projectileLifetime);
+                
+                }
             
-            if (!useAI){
-                GameObject instance2 = Instantiate(projectilePrefab,
-                                            projectilePosition2.position, Quaternion.identity);
-
-                Rigidbody2D myRigidBody2 = instance2.GetComponent<Rigidbody2D>();
-                if (myRigidBody2 != null){
-                    myRigidBody2.velocity = projectilePosition2.up * projectileSpeed;
-                    }
-
-                Destroy(instance2, projectileLifetime);
-            }
-
-            if(useAI){
+            if(isAI){
                 yield return new WaitForSeconds(AiFiringRate());
                 }
             
