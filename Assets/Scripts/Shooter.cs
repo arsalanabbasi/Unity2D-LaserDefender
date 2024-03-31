@@ -11,20 +11,22 @@ public class Shooter : MonoBehaviour
     [Header("Laser Attributes")]
     [SerializeField] float projectileSpeed = 15f;
     [SerializeField] float projectileLifetime = 5f;
-    [SerializeField] float baseFiringRate = 0.5f;
+    [SerializeField] float playerBaseFiringRate = 4f;
+
+  
     
     [Header("AI")]
     [SerializeField] bool isAI;
-    [SerializeField] float minFiringRate = 0.7f;
-    [SerializeField] float firingRateVariance = 0.4f;
+    [SerializeField] float aiBaseFiringRate = 0.5f;
+    [SerializeField] float aiMinFiringRate = 0.7f;
+    [SerializeField] float aiFiringRateVariance = 0.4f;
+
     Coroutine firingCoroutine;
     [HideInInspector] public bool isFiring;
     
     void Start()
     {
-        if (isAI){
             isFiring = true;
-            }
     }
 
 
@@ -67,7 +69,7 @@ public class Shooter : MonoBehaviour
                 }
             
             else{
-                yield return new WaitForSeconds(baseFiringRate);
+                yield return new WaitForSeconds(playerBaseFiringRate);
                 }
             
             }
@@ -75,8 +77,8 @@ public class Shooter : MonoBehaviour
         }
 
     float AiFiringRate(){
-        float aiFireRate = Random.Range(baseFiringRate - firingRateVariance,
-                                        baseFiringRate + firingRateVariance);
-        return Mathf.Clamp(aiFireRate, minFiringRate, float.MaxValue);             
+        float aiFireRate = Random.Range(aiBaseFiringRate - aiFiringRateVariance,
+                                        aiBaseFiringRate + aiFiringRateVariance);
+        return Mathf.Clamp(aiFireRate, aiMinFiringRate, float.MaxValue);             
         }
 }
