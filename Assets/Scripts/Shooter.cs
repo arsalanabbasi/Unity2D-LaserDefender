@@ -23,6 +23,11 @@ public class Shooter : MonoBehaviour
 
     Coroutine firingCoroutine;
     [HideInInspector] public bool isFiring;
+    AudioPlayer audioPlayer;
+
+    void Awake(){
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+        }
     
     void Start()
     {
@@ -51,9 +56,10 @@ public class Shooter : MonoBehaviour
         while(true){
             
             foreach(Transform child in projectilePositions){
+                
                 GameObject instance = Instantiate(projectilePrefab,
                                             child.position, Quaternion.identity);
-                
+                PlayShootingAudio();
                 Rigidbody2D myRigidBody = instance.GetComponent<Rigidbody2D>();
             
             if (myRigidBody != null){
@@ -74,6 +80,14 @@ public class Shooter : MonoBehaviour
             
             }
    
+        }
+
+    void PlayShootingAudio(){
+        if (isAI){
+            audioPlayer.PlayAiShootingSfx();
+            }
+        else
+            audioPlayer.PlayPlayerShootingSfx();
         }
 
     float AiFiringRate(){

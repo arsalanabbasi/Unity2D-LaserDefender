@@ -7,11 +7,13 @@ public class Health : MonoBehaviour
     [SerializeField] int health = 50;
     [SerializeField] bool applyCameraShake;
     SpecialEffects specialEffects;
+    AudioPlayer audioPlayer;
     CameraShake cameraShake;
 
     void Awake(){
         specialEffects = GetComponent<SpecialEffects>();
         cameraShake = FindObjectOfType<CameraShake>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -24,6 +26,7 @@ public class Health : MonoBehaviour
                 cameraShake.PlayCameraShake();
                 }
             specialEffects.PlayHitEffect();
+            audioPlayer.PlayDamageSfx();
             damageDealer.Hit();
         }
     }
