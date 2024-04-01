@@ -914,7 +914,7 @@ MonoBehaviour:
   paddingLeft: 1.1
   paddingRight: 1.1
   paddingTop: 12
-  paddingBottom: 1
+  paddingBottom: 2.75
 --- !u!50 &-4265066325374951704
 Rigidbody2D:
   serializedVersion: 4
@@ -1013,7 +1013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67ce52d8d55dd240a2407373cf93fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   health: 50
+  score: 0
   applyCameraShake: 1
 --- !u!114 &633838802178550364
 MonoBehaviour:

@@ -337,7 +337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67ce52d8d55dd240a2407373cf93fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   health: 50
+  score: 10
+  applyCameraShake: 0
 --- !u!114 &596100364773278262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61deaf34cb575e449d02c162a9ec437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 30
 --- !u!114 &8558645206016255016
 MonoBehaviour:
   m_ObjectHideFlags: 0

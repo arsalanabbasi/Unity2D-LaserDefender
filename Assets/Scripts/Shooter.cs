@@ -95,4 +95,5 @@ public class Shooter : MonoBehaviour
                                         aiBaseFiringRate + aiFiringRateVariance);
         return Mathf.Clamp(aiFireRate, aiMinFiringRate, float.MaxValue);             
         }
+    
 }
