@@ -37,7 +37,7 @@ public class UIDisplay : MonoBehaviour
         }
 
     void DisplayScore(){
-        displayScore.text = "Score: " + scoreKeeper.GetPlayerScore().ToString();
+        displayScore.text = scoreKeeper.GetPlayerScore().ToString("000000000");
         }
     
     void DisplayHealth(){
